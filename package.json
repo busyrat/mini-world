@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon --watch src --ext ts --exec \"tsx src/index.ts\""
+    "start": "nodemon --watch src --ext tsx --exec \"tsx src/index.tsx\""
   },
   "devDependencies": {
     "nodemon": "^3.1.4",
