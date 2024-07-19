@@ -11,7 +11,13 @@ console.log();
 app.use(express.static(path.join(__dirname, '../public')));
 
 function htmlGenerator(postContent) {
-  const Nav = () => <nav className="p-10 text-xl bg-blue-200">nav</nav>
+  const Link = ({ href, children }) => {
+    return <a href={href} className="link text-blue-500 hover:underline">{children}</a>
+  }
+  const Nav = () => <nav className="p-10 text-xl bg-blue-200 flex gap-10">
+    <Link href="/hello">Hello</Link>
+    <Link href="/world">World</Link>
+  </nav>
   const Footer = () => <div className="px-10 py-4 text-xl bg-blue-200">footer</div>
   const jsx = (
     <html lang="en">
@@ -26,6 +32,7 @@ function htmlGenerator(postContent) {
         <div className="p-10 flex-1">{ postContent }</div>
         <Footer />
       </body>
+      <script src="/client.js"></script>
     </html>
   )
 
